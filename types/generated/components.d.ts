@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedContributors extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contributors';
+  info: {
+    displayName: 'Contributors';
+    icon: 'heart';
+  };
+  attributes: {
+    email: Schema.Attribute.String;
+    LinkedIn: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -8,6 +21,29 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedProjectLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_project_links';
+  info: {
+    displayName: 'Project Links';
+    icon: 'cursor';
+  };
+  attributes: {
+    github: Schema.Attribute.String;
+    live: Schema.Attribute.String;
+  };
+}
+
+export interface SharedProjectRelation extends Struct.ComponentSchema {
+  collectionName: 'components_shared_project_relations';
+  info: {
+    displayName: 'ProjectRelation';
+    icon: 'collapse';
+  };
+  attributes: {
+    project: Schema.Attribute.Relation<'oneToOne', 'api::project.project'>;
   };
 }
 
@@ -62,14 +98,30 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTechStack extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tech_stacks';
+  info: {
+    displayName: 'Tech Stack';
+    icon: 'stack';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    purpose: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.contributors': SharedContributors;
       'shared.media': SharedMedia;
+      'shared.project-links': SharedProjectLinks;
+      'shared.project-relation': SharedProjectRelation;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.tech-stack': SharedTechStack;
     }
   }
 }

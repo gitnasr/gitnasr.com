@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_project_relations",
+  "info": {
+    "displayName": "ProjectRelation",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  },
+  "config": {}
+}

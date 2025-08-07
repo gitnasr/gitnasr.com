@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_contributors",
+  "info": {
+    "displayName": "Contributors",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "LinkedIn": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ProjectStatus": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Production",
+        "Deprecated",
+        "Under Development",
+        "Side Project",
+        "Paused",
+        "Need Support"
+      ]
+    },
+    "StartDate": {
+      "type": "date"
+    },
+    "EndDate": {
+      "type": "date"
+    },
+    "techstack": {
+      "type": "component",
+      "component": "shared.tech-stack",
+      "repeatable": true
+    },
+    "Contributors": {
+      "type": "component",
+      "component": "shared.contributors",
+      "repeatable": false
+    },
+    "ProblemSolved": {
+      "type": "richtext"
+    },
+    "Links": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.project-links"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Frontend",
+        "Backend",
+        "Full Stack",
+        "Extenstion"
+      ]
+    },
+    "relatedprojects": {
+      "type": "component",
+      "component": "shared.project-relation",
+      "repeatable": false
+    }
+  }
+}
