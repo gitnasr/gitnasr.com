@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_versions",
+  "info": {
+    "displayName": "version",
+    "icon": "oneToMany"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "default": "v1.0",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

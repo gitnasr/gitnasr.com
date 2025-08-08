@@ -6,10 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "github": {
+    "url": {
       "type": "string"
     },
-    "live": {
+    "purpose": {
       "type": "string"
     }
   },

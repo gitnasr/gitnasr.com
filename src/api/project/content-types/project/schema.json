@@ -21,27 +21,12 @@
       "targetField": "title",
       "required": true
     },
-    "Description": {
-      "type": "richtext",
-      "required": true
-    },
     "Cover": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": [
         "images"
-      ]
-    },
-    "Gallery": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
       ]
     },
     "ProjectStatus": {
@@ -55,6 +40,24 @@
         "Paused",
         "Need Support"
       ]
+    },
+    "Gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "ProblemSolved": {
+      "type": "richtext"
     },
     "StartDate": {
       "type": "date"
@@ -72,27 +75,31 @@
       "component": "shared.contributors",
       "repeatable": false
     },
-    "ProblemSolved": {
-      "type": "richtext"
-    },
     "Links": {
       "type": "dynamiczone",
       "components": [
         "shared.project-links"
       ]
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "Frontend",
-        "Backend",
-        "Full Stack",
-        "Extenstion"
-      ]
-    },
     "relatedprojects": {
       "type": "component",
       "component": "shared.project-relation",
+      "repeatable": false
+    },
+    "version": {
+      "type": "component",
+      "component": "shared.version",
+      "repeatable": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "projects"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
       "repeatable": false
     }
   }

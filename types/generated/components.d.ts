@@ -8,7 +8,7 @@ export interface SharedContributors extends Struct.ComponentSchema {
   };
   attributes: {
     email: Schema.Attribute.String;
-    LinkedIn: Schema.Attribute.String;
+    linkedin: Schema.Attribute.String;
     name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -31,8 +31,8 @@ export interface SharedProjectLinks extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    github: Schema.Attribute.String;
-    live: Schema.Attribute.String;
+    purpose: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -110,6 +110,21 @@ export interface SharedTechStack extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVersion extends Struct.ComponentSchema {
+  collectionName: 'components_shared_versions';
+  info: {
+    displayName: 'version';
+    icon: 'oneToMany';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    number: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'v1.0'>;
+    url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -122,6 +137,7 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.tech-stack': SharedTechStack;
+      'shared.version': SharedVersion;
     }
   }
 }
