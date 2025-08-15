@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-13T08:43:41.747Z"
+    "x-generation-date": "2025-08-15T09:14:11.939Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6493,7 +6493,10 @@
                             }
                           },
                           "Contributors": {
-                            "$ref": "#/components/schemas/SharedContributorsComponent"
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/SharedContributorsComponent"
+                            }
                           },
                           "Links": {
                             "type": "array",
@@ -7395,7 +7398,10 @@
                 }
               },
               "Contributors": {
-                "$ref": "#/components/schemas/SharedContributorsComponent"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedContributorsComponent"
+                }
               },
               "Links": {
                 "type": "array",
@@ -8989,7 +8995,10 @@
                         }
                       },
                       "Contributors": {
-                        "$ref": "#/components/schemas/SharedContributorsComponent"
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/SharedContributorsComponent"
+                        }
                       },
                       "Links": {
                         "type": "array",
@@ -10164,7 +10173,10 @@
                   }
                 },
                 "Contributors": {
-                  "$ref": "#/components/schemas/SharedContributorsComponent"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SharedContributorsComponent"
+                  }
                 },
                 "Links": {
                   "type": "array",
@@ -11906,7 +11918,10 @@
                 }
               },
               "Contributors": {
-                "$ref": "#/components/schemas/SharedContributorsComponent"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedContributorsComponent"
+                }
               },
               "Links": {
                 "type": "array",
@@ -12787,7 +12802,10 @@
             }
           },
           "Contributors": {
-            "$ref": "#/components/schemas/SharedContributorsComponent"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedContributorsComponent"
+            }
           },
           "Links": {
             "type": "array",

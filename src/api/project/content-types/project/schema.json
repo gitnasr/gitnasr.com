@@ -73,7 +73,7 @@
     "Contributors": {
       "type": "component",
       "component": "shared.contributors",
-      "repeatable": false
+      "repeatable": true
     },
     "Links": {
       "type": "dynamiczone",

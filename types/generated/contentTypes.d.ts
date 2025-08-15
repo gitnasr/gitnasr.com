@@ -583,7 +583,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::category.category'
     >;
-    Contributors: Schema.Attribute.Component<'shared.contributors', false>;
+    Contributors: Schema.Attribute.Component<'shared.contributors', true>;
     Cover: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
